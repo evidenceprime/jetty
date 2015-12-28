@@ -1,0 +1,15 @@
+[Unit]
+Description=Jetty 9
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=forking
+User=jetty
+Group=jetty
+ExecStart=<%= @jetty_sh %> start
+PIDFile=<%= @jetty_pid %>
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
