@@ -134,7 +134,8 @@ if on_jessie
   template '/etc/systemd/system/jetty.service' do
     source 'jetty-9-service.erb'
     variables(
-      :jetty_sh => jetty_sh_location,
+      :home => node['jetty']['home'],
+      :port => node['jetty']['port'],
       :jetty_pid => File.join(node['jetty']['home'], 'jetty.pid')
     )
   end

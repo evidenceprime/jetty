@@ -4,10 +4,9 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-Type=forking
 User=jetty
 Group=jetty
-ExecStart=<%= @jetty_sh %> start
+ExecStart=/usr/bin/java -Djetty.home=<%= @home %> -Djetty.base=<%= @home %> -Djava.io.tmpdir=/tmp -jar <%= @home %>/start.jar -Dhttp.jetty.port=<%= @port %>
 PIDFile=<%= @jetty_pid %>
 Restart=on-failure
 
