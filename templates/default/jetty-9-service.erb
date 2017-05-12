@@ -6,7 +6,7 @@ After=network-online.target
 [Service]
 User=jetty
 Group=jetty
-ExecStart=/usr/bin/java -Djetty.home=<%= @home %> -Djetty.base=<%= @home %> -Djava.io.tmpdir=/tmp -jar <%= @home %>/start.jar -Dhttp.jetty.port=<%= @port %>
+ExecStart=/usr/bin/java -Djetty.home=<%= @home %> -Djetty.base=<%= @home %> -Djava.io.tmpdir=/tmp -jar <%= @home %>/start.jar -Dhttp.jetty.port=<%= @port %> <%= @additional_opts %>
 PIDFile=<%= @jetty_pid %>
 Restart=on-failure
 

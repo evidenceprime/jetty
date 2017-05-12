@@ -136,7 +136,8 @@ if on_jessie
     variables(
       :home => node['jetty']['home'],
       :port => node['jetty']['port'],
-      :jetty_pid => File.join(node['jetty']['home'], 'jetty.pid')
+      :jetty_pid => File.join(node['jetty']['home'], 'jetty.pid'),
+      :additional_opts => node['jetty']['args'].join(' ')
     )
   end
 elsif node['jetty']['syslog']['enable']
