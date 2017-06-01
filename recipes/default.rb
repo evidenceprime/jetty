@@ -168,12 +168,6 @@ end
 ################################################################################
 # Jetty Config
 
-directory "/etc/jetty" do
-  mode '755'
-  owner node['jetty']['user']
-  group node['jetty']['group']
-end
-
 directory "#{node['jetty']['home']}/start.d" do
   mode '755'
   owner node['jetty']['user']
