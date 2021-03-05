@@ -16,7 +16,7 @@ GRAPH
     hipsnip-jetty (>= 0.0.0)
   java (1.36.0)
     apt (>= 0.0.0)
-  jetty (0.10.1)
+  jetty (0.12.0)
     java (>= 1.10.0)
   minitest-handler (0.2.1)
     chef_handler (>= 0.0.0)

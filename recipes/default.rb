@@ -122,6 +122,7 @@ end
 
 debian_release = node['lsb']['codename']
 on_jessie = debian_release == 'jessie'
+on_stretch = debian_release == 'stretch'
 
 jetty_sh_location = if on_jessie
   File.join(node['jetty']['home'], 'bin', 'jetty.sh')
@@ -129,7 +130,7 @@ else
   '/etc/init.d/jetty'
 end
 
-if on_jessie
+if on_jessie or on_stretch
   # Enable systemd script
   template '/etc/systemd/system/jetty.service' do
     source 'jetty-9-service.erb'
